@@ -1,0 +1,31 @@
+package com.chalapathi;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+@RequestMapping("/load-test/api/v1")
+public class HelloController {
+
+	@Autowired
+	private Environment environment;
+
+	@GetMapping("/welcome")
+	public String retrieveExchangeValue() {
+		String port = environment.getProperty("local.server.port");
+		return "Hello Welcome to microservices " + port;
+	}
+}
+
+
+@FeignClient(name = "product-service")
+public interface ProductClient {
+    @GetMapping("/api/v1/products/{id}")
+    Product getProductById(@PathVariable("id") Integer id);
+}
+
+

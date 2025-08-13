@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
+		<list key="findhistory">
+			<item value="StringUtils"/>
+			<item value="paymentClient"/>
+			<item value="/api/v1/payments"/>
+			<item value="api/v1/payments"/>
+			<item value="payment-service"/>
+			<item value="application.config.payment-url"/>
+			<item value="gateway"/>
+			<item value="fly"/>
+			<item value="post"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1361"/>
+		<item key="DIALOG_Y_ORIGIN" value="389"/>
+	</section>
+</section>

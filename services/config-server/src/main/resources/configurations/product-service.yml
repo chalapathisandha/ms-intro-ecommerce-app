@@ -1,0 +1,31 @@
+server:
+  port: 8050
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver    #org.postgresql.Driver
+    url: jdbc:h2:mem:product             #jdbc:postgresql://localhost:5432/product
+    username: sa
+    password: 
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: H2    #postgresql
+    #database-platform: org.hibernate.dialect.H2Dialect   #org.hibernate.dialect.PostgreSQLDialect
+  #flyway:
+    #baseline-on-migrate: true
+    #enabled: true
+    #baseline-description: "init"
+    #baseline-version: 0
+    #user: ${spring.datasource.username}
+    #password: ${spring.datasource.password}
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      mode: always                 # Always run scripts, even if not embedded DB
+      schema-locations: classpath:db/migration/V1__init_database.sql  # Default schema script
+      data-locations: classpath:db/migration/V2__insert_data.sql      # Default data script    
+

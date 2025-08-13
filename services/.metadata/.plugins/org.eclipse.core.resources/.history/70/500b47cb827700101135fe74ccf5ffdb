@@ -1,0 +1,12 @@
+package com.chalapathi.lb;
+
+import java.util.List;
+
+
+public class ProductResp {
+	
+	private String environment;
+	private List<String>  products;
+
+}
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drivers>
+	<provider id="h2">
+		<driver id="h2_embedded" category="H2" categories="sql,embedded" name="H2 Embedded" class="org.h2.Driver" url="jdbc:h2:mem:product" port="8050" defaultUser="sa" description="H2 Embedded" custom="false" embedded="true">
+			<library type="jar" path="maven:/com.h2database:h2:RELEASE" custom="false" version="1.4.199">
+				<file id="com.h2database:h2:RELEASE" version="1.4.199" path="${home}\Sandhata-Work\Mentership\drivers\maven\maven-central\com.h2database\h2-1.4.199.jar" crc="5a752dd4"/>
+			</library>
+			<library type="license" path="https://raw.githubusercontent.com/h2database/h2database/master/LICENSE.txt" custom="false">
+				<file id="https://raw.githubusercontent.com/h2database/h2database/master/LICENSE.txt" path="${home}\Sandhata-Work\Mentership\drivers\remote\h2database\h2database\master\LICENSE.txt" crc="f5d911df"/>
+			</library>
+			<parameter name="read-only-data" value="false"/>
+			<parameter name="supports-indexes" value="true"/>
+			<parameter name="all-objects-pattern" value="%"/>
+			<parameter name="quote-reserved-words" value="true"/>
+			<parameter name="omit-schema" value="false"/>
+			<parameter name="supports-table-constraints" value="true"/>
+			<parameter name="schema-filters-enabled" value="false"/>
+			<parameter name="supports-delimiter-in-views" value="true"/>
+			<parameter name="supports-embedded-database-creation" value="true"/>
+			<parameter name="supports-struct-cache" value="true"/>
+			<parameter name="supports-truncate" value="true"/>
+			<parameter name="read-only-meta-data" value="false"/>
+			<parameter name="omit-type-cache" value="false"/>
+			<parameter name="split-procedures-and-functions" value="false"/>
+			<parameter name="supports-stored-code" value="true"/>
+			<parameter name="supports-references" value="true"/>
+			<parameter name="supports-multi-insert" value="false"/>
+			<parameter name="omit-catalog-name" value="false"/>
+			<parameter name="supports-catalog-selection" value="true"/>
+			<parameter name="omit-single-catalog" value="false"/>
+			<parameter name="ddl-drop-column-brackets" value="false"/>
+			<parameter name="omit-single-schema" value="false"/>
+			<parameter name="supports-scroll" value="false"/>
+			<parameter name="supports-views" value="true"/>
+			<parameter name="script-delimiter" value=";"/>
+			<parameter name="legacy-sql-dialect" value="false"/>
+			<parameter name="script-delimiter-after-query" value="false"/>
+			<parameter name="use-search-string-escape" value="false"/>
+			<parameter name="supports-multiple-results" value="false"/>
+			<parameter name="script-delimiter-after-block" value="false"/>
+			<parameter name="supports-schema-selection" value="true"/>
+			<parameter name="alter-table-add-column" value="false"/>
+			<parameter name="ddl-drop-column-short" value="false"/>
+			<parameter name="supports-limits" value="true"/>
+			<parameter name="supports-select-count" value="true"/>
+		</driver>
+	</provider>
+</drivers>

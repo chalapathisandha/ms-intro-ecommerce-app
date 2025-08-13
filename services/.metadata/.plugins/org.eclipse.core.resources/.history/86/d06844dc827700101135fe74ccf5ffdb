@@ -1,0 +1,25 @@
+package com.chalapathi.lb;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.chalapathi.ecommerce.category.Category;
+import com.chalapathi.ecommerce.product.Product;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class ProductResp {
+	
+	private String environment;
+	private List<String>  products;
+
+}
+

@@ -1,0 +1,2 @@
+spring.application.name=load-balancer-test
+server.port=8000

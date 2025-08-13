@@ -1,0 +1,5 @@
+package com.chalapathi;
+
+public interface ProductClient {
+
+}

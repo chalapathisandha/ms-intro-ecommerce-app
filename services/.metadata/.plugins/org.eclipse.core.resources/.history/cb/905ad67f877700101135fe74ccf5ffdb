@@ -1,0 +1,51 @@
+package com.chalapathi;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.chalapathi.ecommerce.lbtest.ProductResp;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@RestController
+@RequestMapping("/load-test/api/v1")
+public class HelloController {
+
+	@Autowired
+	private ProductClient productClient;
+
+	@GetMapping("/load-products")
+	public String loadProductsFromProductService() {
+		return productClient.loadProducts();
+	}
+}
+
+@FeignClient(name = "product-service")
+interface ProductClient {
+	@GetMapping("/api/sample-products")
+	String loadProducts();
+}
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+class ProductResp {
+	
+	private String environment;
+	private List<String>  products;
+
+}

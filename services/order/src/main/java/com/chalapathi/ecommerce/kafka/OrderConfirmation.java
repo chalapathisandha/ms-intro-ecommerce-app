@@ -1,0 +1,18 @@
+package com.chalapathi.ecommerce.kafka;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.chalapathi.ecommerce.customer.CustomerResponse;
+import com.chalapathi.ecommerce.order.PaymentMethod;
+import com.chalapathi.ecommerce.product.PurchaseResponse;
+
+public record OrderConfirmation (
+        String orderReference,
+        BigDecimal totalAmount,
+        PaymentMethod paymentMethod,
+        CustomerResponse customer,
+        List<PurchaseResponse> products
+
+) {
+}

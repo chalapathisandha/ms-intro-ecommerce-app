@@ -1,0 +1,47 @@
+package com.chalapathi.ecommerce.lbtest;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@RestController
+@RequestMapping("/api/sample-products")
+public class LoadTestController {
+	
+	@Autowired
+	private Environment environment;
+
+	@GetMapping
+	public ResponseEntity<ProductResp> loadProducts() {
+		String port = environment.getProperty("local.server.port");
+		List<String> products = List.of("keyboard", "computer", "monitor", "mouse");
+		return ResponseEntity.ok(ProductResp.builder().products(products).environment(port).build());
+	}
+
+}
+
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+class ProductResp {
+	
+	private String environment;
+	private List<String>  products;
+
+}

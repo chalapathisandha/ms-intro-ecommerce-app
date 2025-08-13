@@ -1,0 +1,26 @@
+server:
+  port: 8050
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver    #org.postgresql.Driver
+    url: jdbc:h2:mem:product             #jdbc:postgresql://localhost:5432/product
+    username: sa
+    password: 
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: H2    #postgresql
+    #database-platform: org.hibernate.dialect.H2Dialect   #org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+    baseline-description: "init"
+    baseline-version: 0
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  h2:
+    console:
+    enable: true
+    path: /h2-console
+
